@@ -1,0 +1,27 @@
+# Conda alternative to requirements.txt:
+#   conda env create -f environment.yml
+#   conda activate image-anomaly
+name: image-anomaly
+channels:
+  - conda-forge
+dependencies:
+  - python=3.11
+  - numpy
+  - scipy
+  - pandas
+  - matplotlib
+  - scikit-image
+  - opencv
+  - pywavelets
+  - scikit-learn
+  - tensorly
+  - pytest
+  - jupyter
+  - shap
+  # Fiji cross-check: conda supplies Java too, which is the hard part elsewhere
+  - openjdk=11
+  - pyimagej
+  - pip
+  - pip:
+      - torch
+      - jax
