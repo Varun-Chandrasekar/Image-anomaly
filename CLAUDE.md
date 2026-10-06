@@ -57,7 +57,7 @@ image-analysis/
     generated/            # synthetic images and videos, git-ignored
   src/
     __init__.py
-    io.py                 # load skimage stills, read/write video (AVI -> (T,H,W) float)
+    io_utils.py           # load skimage stills, read/write video (AVI -> (T,H,W) float)
     artefacts.py          # one function per artefact, each taking a strength argument
     synth_video.py        # synthetic video generators with ground-truth labels
     dataset.py            # build the labelled image table (pandas)
@@ -268,14 +268,35 @@ This is optional and should take about half a day. Use PyImageJ (`imagej.init('s
 | Oct 16 | Module 8 |
 | Oct 17–18 | README, final figures, limitations, talking points; buffer |
 
+## Baseline code (already in the repo)
+
+The repo starts from a tested baseline, not an empty folder. Build on it; don't rewrite it.
+- **`src/`** covers Modules 1–4 and first versions of Modules 5–6: `models.py` and `vvuq.py`.
+- **`tests/`** passes with `pytest -q`: 37 tests, with the Fiji tests skipped unless PyImageJ is installed.
+- **`scripts/demo.py --real`** runs every module at a small scale and writes the figures.
+
+What each module session should add on top:
+- **Notebooks:** one notebook per module, with explanations and fuller figures.
+- **Modules 5–8:**
+  - the PyTorch autoencoder;
+  - the one-class SVM comparison;
+  - clustering;
+  - calibration plots;
+  - robustness tests;
+  - SHAP explanations;
+  - JAX.
+- **Fiji:** a real Fiji run of `tests/test_fiji_agreement.py`.
+
+Known baseline limitation: the Isolation Forest scores blurred images as more normal than clean ones (AUC about 0.2–0.3). Investigate it in Modules 5 and 7; don't hide it.
+
 ## Status
 
-Update this list as modules finish.
+Update this list as modules finish. "Baseline" means the code and tests exist but the notebook and "done when" review do not.
 
-- [ ] Module 1
-- [ ] Module 2
-- [ ] Module 3
-- [ ] Module 4
+- [ ] Module 1 (baseline)
+- [ ] Module 2 (baseline)
+- [ ] Module 3 (baseline)
+- [ ] Module 4 (baseline)
 - [ ] Module 5
 - [ ] Module 6
 - [ ] Module 7

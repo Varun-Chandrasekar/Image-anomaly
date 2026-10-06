@@ -1,0 +1,17 @@
+numpy>=2.4.6
+scipy>=1.17.1
+pandas>=3.0.6
+matplotlib>=3.11.2
+scikit-image>=0.26.0
+opencv-python>=5.0.0
+PyWavelets>=1.8.0
+scikit-learn>=1.9.1
+tensorly>=0.10.0
+pytest>=8
+jupyter
+# Later modules:
+torch
+shap
+jax
+# Optional Fiji cross-check (needs a Java runtime):
+# pyimagej
